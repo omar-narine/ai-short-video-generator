@@ -1,6 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Provider from "./provider";
+import ConvextClientProvider from "./ConvextClientProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={outfit.className}>
-        <Provider>{children}</Provider>
+        <ConvextClientProvider>{children}</ConvextClientProvider>
       </body>
     </html>
   );
