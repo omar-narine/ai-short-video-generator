@@ -9,12 +9,19 @@ import { api } from "@/convex/_generated/api";
 
 function Provider({ children }) {
   const [user, setUser] = useState();
-  const createUser = useMutation(api.users.createNewUser);
+  const CreateUser = useMutation(api.users.CreateNewUser);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       console.log(user);
       setUser(user);
+
+      const result = await CreateUser({
+        name: user?.displayName,
+        email: user?.email,
+        pictureURL: user?.photoURL,
+      });
+      console.log(result);
     });
     return () => unsubscribe();
   });
