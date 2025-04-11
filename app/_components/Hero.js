@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
+import Authentication from "./Authentication";
 
 function Hero() {
   return (
@@ -12,10 +13,12 @@ function Hero() {
         and publish engaging short content with ease
       </p>
       <div className="mt-7 gap-8 flex">
-        <Button size="lg">Get Started</Button>
         <Button size="lg" variant="secondary">
           Explore
         </Button>
+        <Authentication>
+          <Button size="lg">Get Started</Button>
+        </Authentication>
       </div>
     </div>
   );
