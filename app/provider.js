@@ -21,7 +21,7 @@ function Provider({ children }) {
         email: user?.email,
         pictureURL: user?.photoURL,
       });
-      console.log(result);
+      console.log("Result", result);
     });
     return () => unsubscribe();
   });
